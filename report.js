@@ -11,7 +11,9 @@ function convertTimestamp(timestamp) {
 
 function timeToDecimal(t) {
   var arr = t.split(':');
-  return parseFloat(parseInt(arr[0], 10) + '.' + parseInt(arr[1] / 6 * 10, 10));
+    var dec = parseInt((arr[1]/6)*10, 10);
+    
+    return parseFloat(parseInt(arr[0], 10) + '.' + (dec<10?'0':'') + dec);
 }
 
 var data = '';
